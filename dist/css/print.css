@@ -1,0 +1,8 @@
+.label{
+ color:#ff0000; 
+ -webkit-print-color-adjust: exact;
+}
+.position{
+ color:#0000ff;   
+ -webkit-print-color-adjust: exact;
+}

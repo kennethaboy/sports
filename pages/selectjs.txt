@@ -1,0 +1,25 @@
+<script>
+		var counter = 1;
+		var limit = 25;
+		function addInput(divName){
+			 if (counter == limit)  {
+				  alert("You have reached the limit of adding " + counter + " inputs");
+			 }
+			 else {
+				  var newdiv = document.createElement('div');
+				  newdiv.innerHTML ="<?php 
+									echo "<select class='form-control select2' name='name'>";
+									$query2=mysqli_query($con,'select * from resident')or die(mysqli_error());
+										while($row2=mysqli_fetch_array($query2))
+										{
+											
+											echo "<option value='$row2[resident_id]'>".$row2['fname'].$row2['lname'];
+											echo "</option>";
+										}
+										echo "</select>";
+										?>";
+				  document.getElementById(divName).appendChild(newdiv);
+				  counter++;
+			 }
+		}
+	</script>
